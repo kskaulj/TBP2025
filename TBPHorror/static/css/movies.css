@@ -1,0 +1,105 @@
+
+body {
+    background-color: #000; 
+    color: #fff; 
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+nav {
+    background-color: #222; 
+    padding: 10px 20px;
+    border-bottom: 2px solid #ff4500; 
+}
+
+nav a {
+    color: #fff; 
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ff4500; /
+}
+
+
+header {
+    text-align: center;
+    margin: 20px 0;
+}
+
+header h1 {
+    color: #ff4500; 
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #ccc; 
+}
+
+header input[type="text"] {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #ff4500; 
+    border-radius: 4px;
+    background-color: #222; 
+    color: #fff; 
+}
+
+header button {
+    background-color: #ff4500; 
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+header button:hover {
+    background-color: #cc3700; 
+}
+
+/* Movie kartice */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    border: #cc3700;
+}
+
+.movie-card {
+    background-color: #111; 
+    border: 1px solid #ff4500; 
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.movie-card h5 {
+    color: #ff4500; 
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.movie-card p {
+    margin: 5px 0;
+    color: #ddd; 
+}
+
+.movie-card .font-weight-bold {
+    color: #ff4500; 
+}
+
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    border-top: 1px solid #ff4500;
+    color: #ccc;
+    font-size: 0.9rem;
+}

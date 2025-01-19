@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <title>Search Recommendations</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-light bg-dark">
+        <a class="navbar-brand" href="{{ url_for('index') }}">Horror Films</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                </li>
+            </ul>
+        </div>
+        <a href="{{ url_for('logout') }}" class="btn btn-danger ml-auto">Logout</a>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Recommendations based on your favorite movie</h1>
+        {% if movies %}
+        <h2>Recommended Movies:</h2>
+        {% for movie in movies %}
+            <div class="movie">
+                <h2>{{ movie.RecommendedMovie }}</h2>
+                <p><span>Similarity:</span> {{ movie.Similarity }}</p>
+                <p><span>Shared Genres Count:</span> {{ movie.SharedGenresCount }}</p>
+                <p><span>Shared Genres:</span> {{ movie.SharedGenres | join(', ') }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No recommendations found. Try searching again.</p>
+    {% endif %}
+    </div>
+  </body>
+</html>

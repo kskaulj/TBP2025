@@ -1,0 +1,106 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; 
+    color: #f8f9fa; 
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-top: 50px;
+    color: #ff4500; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #212529; 
+    border-radius: 10px;
+    border: 2px solid #ff4500; 
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.7); 
+    max-width: 400px;
+}
+
+
+form input[type="text"],
+form input[type="password"] {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ff4500;
+    background-color: #333; 
+    color: #f8f9fa;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+form input[type="text"]::placeholder,
+form input[type="password"]::placeholder {
+    color: #888; 
+}
+
+/* botuni */
+form button {
+    width: 90%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff4500;
+    color: #f8f9fa;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #e63900; 
+}
+
+
+.flash {
+    color: #f8f9fa;
+    background-color: #d9534f;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Responzivno */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    form {
+        width: 95%;
+        padding: 15px;
+    }
+
+    form input[type="text"],
+    form input[type="password"],
+    form button {
+        width: 100%;
+    }
+
+    form input[type="text"],
+    form input[type="password"] {
+        font-size: 1rem;
+    }
+
+    form button {
+        font-size: 1.1rem;
+    }
+}

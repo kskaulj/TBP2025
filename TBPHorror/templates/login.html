@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/login.css') }}">
+</head>
+</head>
+<body>
+    <h2>Login</h2>
+    <form method="POST" action="/login">
+        <label for="username">Username:</label>
+        <input type="text" name="name" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Login</button>
+        <a href="{{ url_for('register') }}" class="btn">Register</a>
+    </form>
+</body>
+</html>

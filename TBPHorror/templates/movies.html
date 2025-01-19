@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>All Movies</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+  </head>
+  <body>
+    <div class="container mt-4">
+        <h1>All Movies</h1>
+       
+        <form method="POST" action="{{ url_for('all_movies') }}" class="mb-4">
+            <input type="text" name="search_query" class="form-control" placeholder="Search for a movie..." 
+                   value="{{ request.form.search_query or '' }}">
+            <button type="submit" class="btn">Search</button>
+        </form>
+        
+        {% if movies %}
+        {% for movie in movies %}
+            <div class="movie-card p-3 mb-4">
+                <h5 class="card-title">{{ movie.title }}</h5>
+                <p><span class="font-weight-bold">Genres:</span> {{ movie.genres }}</p>
+                <p><span class="font-weight-bold">Overview:</span> {{ movie.overview }}</p>
+                <p><span class="font-weight-bold">Popularity:</span> {{ movie.popularity }}</p>
+                <p><span class="font-weight-bold">Release Date:</span> {{ movie.release_date }}</p>
+                
+                <form method="POST" action="{{ url_for('like_movie', title=movie['title']) }}">
+                    <button type="submit" class="btn">Like</button>
+                </form>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No movies found.</p>
+    {% endif %}
+    </div>
+
+   
+    
+  </body>
+</html>

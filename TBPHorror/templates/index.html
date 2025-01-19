@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Welcome to FlaskBlog {% endblock %}</h1>
+    {% for movie in movies %}
+        <a href="#">
+            <h2>{{ movie['title'] }}</h2>
+        </a>
+        <span class="badge badge-primary">{{ movie['created'] }}</span>
+        <hr>
+    {% endfor %}
+{% endblock %}
